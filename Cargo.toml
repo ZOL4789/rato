@@ -7,7 +7,7 @@
 edition = "2021"
 
 [workspace]
-members = ["rato-pro", "rato-core", 'migration', "rato-error", "rato"]
+members = ["rato-core", 'migration', "rato-error", "rato"]
 resolver = "2"
 
 [workspace.dependencies]
