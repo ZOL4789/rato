@@ -1,0 +1,9 @@
+[package]
+name = "rato-error"
+version = "0.1.0"
+edition.workspace = true
+
+[dependencies]
+axum = { workspace = true }
+tokio = { workspace = true, features = ["rt", "rt-multi-thread", "macros"] }
+rato-core = { workspace = true, features = ["error_handler"] }

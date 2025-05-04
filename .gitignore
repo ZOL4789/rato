@@ -1,0 +1,11 @@
+/target
+/.sqlx
+/.idea
+/migration
+/Cargo.lock
+/node_modules
+/rato-pro
+/rato/target
+/rato-core/target
+/rato-error/target
+/rato-pro/src/entity/

@@ -1,0 +1,31 @@
+[package]
+name = "rato-core"
+version = "0.1.0"
+edition.workspace = true
+
+[features]
+default = ["empty"]
+empty = []
+auth = ["axum/macros", "tower-layer", "tower-service", "future"]
+error_handler = ["axum/macros","tokio","tower-layer", "tower-service", "futures-util"]
+db = ["tokio", "sea-orm/sqlx-mysql", "sea-orm/runtime-tokio-rustls", "sea-orm/macros", "async-trait"]
+redis = ["redis/bb8", "redis/tokio-comp", "bb8", "bb8-redis", "async-trait"]
+future = ["axum", "pin-project-lite"]
+
+[lib]
+name = "rato_core"
+
+[dependencies]
+axum = { workspace = true, features = ["macros"], optional = true }
+tower-layer = { workspace = true, optional = true }
+tower-service = { version = "0.3.3", optional = true }
+serde = { workspace = true, optional = true }
+http-body = { version = "1.0.1", optional = true }
+async-trait = { version = "0.1.88", optional = true }
+pin-project-lite = { version = "0.2.16", optional = true }
+tokio = { workspace = true, optional = true }
+bb8 = { workspace = true, optional = true }
+bb8-redis = { workspace = true, optional = true }
+redis = { workspace = true, features = ["bb8", "tokio-comp"], optional = true }
+sea-orm = { version = "1.1.8", features = ["sqlx-mysql", "runtime-tokio-rustls", "macros"], optional = true }
+futures-util = { version = "0.3.31", optional = true }
